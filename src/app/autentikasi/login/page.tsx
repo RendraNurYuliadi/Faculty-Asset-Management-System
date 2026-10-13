@@ -3,12 +3,12 @@
 import { useState, type FormEvent } from "react";
 import Link from "next/link";
 
-export default function RegisterPage() {
+export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
 
-  function handleRegister(event: FormEvent<HTMLFormElement>) {
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    alert("UI pendaftaran berhasil dicoba! Fitur pendaftaran belum aktif.");
+    alert("UI login berhasil! Autentikasi belum diaktifkan.");
   }
 
   return (
@@ -18,27 +18,20 @@ export default function RegisterPage() {
           <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-black text-xl font-bold text-white">
             F
           </div>
-          <h1 className="text-2xl font-bold">Buat Akun FAMS</h1>
+          <h1 className="text-2xl font-bold tracking-tight">FAMS</h1>
           <p className="mt-2 text-sm text-gray-500">
             Faculty Asset Management System
           </p>
         </div>
 
-        <form onSubmit={handleRegister} className="space-y-5">
-          <div>
-            <label htmlFor="name" className="mb-2 block text-sm font-medium">
-              Nama Lengkap
-            </label>
-            <input
-              id="name"
-              type="text"
-              placeholder="Masukkan nama lengkap"
-              autoComplete="name"
-              required
-              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm outline-none placeholder:text-gray-400 focus:border-black focus:ring-1 focus:ring-black"
-            />
-          </div>
+        <div className="mb-6">
+          <h2 className="text-xl font-semibold">Selamat Datang</h2>
+          <p className="mt-1 text-sm text-gray-500">
+            Silakan masuk ke akun Anda.
+          </p>
+        </div>
 
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <label htmlFor="email" className="mb-2 block text-sm font-medium">
               Email
@@ -49,23 +42,25 @@ export default function RegisterPage() {
               placeholder="nama@email.com"
               autoComplete="email"
               required
-              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm outline-none placeholder:text-gray-400 focus:border-black focus:ring-1 focus:ring-black"
+              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm outline-none transition placeholder:text-gray-400 focus:border-black focus:ring-1 focus:ring-black"
             />
           </div>
 
           <div>
-            <label htmlFor="password" className="mb-2 block text-sm font-medium">
+            <label
+              htmlFor="password"
+              className="mb-2 block text-sm font-medium"
+            >
               Password
             </label>
             <div className="relative">
               <input
                 id="password"
                 type={showPassword ? "text" : "password"}
-                placeholder="Minimal 8 karakter"
-                autoComplete="new-password"
-                minLength={8}
+                placeholder="Masukkan password"
+                autoComplete="current-password"
                 required
-                className="w-full rounded-xl border border-gray-300 px-4 py-3 pr-24 text-sm outline-none placeholder:text-gray-400 focus:border-black focus:ring-1 focus:ring-black"
+                className="w-full rounded-xl border border-gray-300 px-4 py-3 pr-24 text-sm outline-none transition placeholder:text-gray-400 focus:border-black focus:ring-1 focus:ring-black"
               />
               <button
                 type="button"
@@ -77,36 +72,27 @@ export default function RegisterPage() {
             </div>
           </div>
 
-          <div>
-            <label
-              htmlFor="confirmPassword"
-              className="mb-2 block text-sm font-medium"
+          <div className="flex justify-end">
+            <Link
+              href="/autentikasi/forgot-password"
+              className="text-sm font-medium text-gray-600 hover:text-black hover:underline"
             >
-              Konfirmasi Password
-            </label>
-            <input
-              id="confirmPassword"
-              type={showPassword ? "text" : "password"}
-              placeholder="Ulangi password"
-              autoComplete="new-password"
-              minLength={8}
-              required
-              className="w-full rounded-xl border border-gray-300 px-4 py-3 text-sm outline-none placeholder:text-gray-400 focus:border-black focus:ring-1 focus:ring-black"
-            />
+              Lupa password?
+            </Link>
           </div>
 
           <button
             type="submit"
             className="w-full rounded-xl bg-black py-3 text-sm font-semibold text-white transition hover:bg-gray-800 active:scale-[0.99]"
           >
-            Daftar
+            Masuk
           </button>
         </form>
 
         <p className="mt-6 text-center text-sm text-gray-500">
-          Sudah punya akun?{" "}
-          <Link href="/login" className="font-semibold text-black hover:underline">
-            Masuk
+          Belum punya akun?{" "}
+          <Link href="/autentikasi/register" className="font-semibold text-black hover:underline">
+            Daftar
           </Link>
         </p>
 

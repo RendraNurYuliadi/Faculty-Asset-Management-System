@@ -15,15 +15,19 @@ const pageInfo: Record<string, { title: string; subtitle: string }> = {
     title: "Data Aset",
     subtitle: "Manajemen Aset / Data Aset",
   },
-  "/dashboard/kategori-aset": {
+  "/dashboard/aset/katalog": {
+    title: "Katalog Aset",
+    subtitle: "Manajemen Aset / Katalog Aset",
+  },
+  "/dashboard/aset/kategori": {
     title: "Kategori Aset",
     subtitle: "Manajemen Aset / Kategori Aset",
   },
-  "/dashboard/ruangan": {
+  "/dashboard/aset/ruangan": {
     title: "Ruangan",
     subtitle: "Manajemen Aset / Ruangan",
   },
-  "/dashboard/lokasi": {
+  "/dashboard/aset/lokasi": {
     title: "Lokasi",
     subtitle: "Manajemen Aset / Lokasi",
   },
@@ -65,7 +69,7 @@ export default function Header({ onMobileMenuClick }: HeaderProps) {
   };
 
   return (
-    <header className="sticky top-0 z-30 flex h-[72px] shrink-0 items-center justify-between border-b border-gray-200 bg-white/95 px-4 backdrop-blur sm:px-6">
+    <header className="sticky top-5 z-30 mx-5 flex h-[72px] shrink-0 items-center justify-between rounded-2xl border border-gray-200 bg-white/95 px-4 shadow-sm backdrop-blur sm:px-6">
       <div className="flex min-w-0 items-center gap-3">
         <button
           type="button"

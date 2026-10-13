@@ -1,43 +1,43 @@
 const stats = [
-  { label: "Total Aset", value: "128", note: "Seluruh aset terdaftar" },
-  { label: "Aset Tersedia", value: "96", note: "Siap digunakan" },
-  { label: "Sedang Dipinjam", value: "24", note: "Dalam peminjaman" },
-  { label: "Perlu Perhatian", value: "8", note: "Pemeliharaan atau keluhan" },
+  { label: "Total Assets", value: "128", note: "All registered assets" },
+  { label: "Available Assets", value: "96", note: "Ready to use" },
+  { label: "Currently Borrowed", value: "24", note: "On loan" },
+  { label: "Needs Attention", value: "8", note: "Maintenance or complaints" },
 ];
 
 const activities = [
   {
-    title: "Pengajuan peminjaman",
-    detail: "Pengajuan menunggu pemeriksaan",
-    status: "Menunggu",
+    title: "Loan request",
+    detail: "Request awaiting review",
+    status: "Pending",
     date: "—",
   },
   {
-    title: "Pemeliharaan aset",
-    detail: "Pemeriksaan kondisi aset",
-    status: "Diproses",
+    title: "Asset maintenance",
+    detail: "Asset condition inspection",
+    status: "In progress",
     date: "—",
   },
   {
-    title: "Pengembalian aset",
-    detail: "Pengembalian menunggu verifikasi",
-    status: "Menunggu",
+    title: "Asset return",
+    detail: "Return awaiting verification",
+    status: "Pending",
     date: "—",
   },
 ];
 
 export default function DashboardPage() {
   return (
-    <div className="mx-auto max-w-7xl space-y-6">
+    <div className="mx-5 my-5 w-auto space-y-6">
       <section>
         <p className="text-sm font-medium text-gray-500">
-          Ringkasan sistem
+          System Overview
         </p>
         <h2 className="mt-1 text-2xl font-bold tracking-tight text-gray-900">
-          Dashboard FAMS
+          FAMS Dashboard
         </h2>
         <p className="mt-2 text-sm leading-6 text-gray-500">
-          Pantau kondisi aset, peminjaman, dan aktivitas fakultas.
+          Monitor asset conditions, loans, and faculty activity.
         </p>
       </section>
 
@@ -61,10 +61,10 @@ export default function DashboardPage() {
       <section className="rounded-2xl border border-gray-200 bg-white shadow-sm">
         <div className="border-b border-gray-200 px-5 py-5 sm:px-6">
           <h3 className="font-semibold text-gray-900">
-            Ringkasan Aktivitas
+            Activity Summary
           </h3>
           <p className="mt-1 text-sm text-gray-500">
-            Gambaran aktivitas pengelolaan aset.
+            An overview of asset management activity.
           </p>
         </div>
 
@@ -92,7 +92,7 @@ export default function DashboardPage() {
 
         <div className="border-t border-gray-200 px-5 py-4 sm:px-6">
           <p className="text-xs text-gray-400">
-            Data di atas merupakan data demo, belum terhubung ke database.
+            This is sample data and is not connected to a database.
           </p>
         </div>
       </section>
